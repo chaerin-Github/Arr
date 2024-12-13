@@ -1,0 +1,51 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void) {
+
+	int Aarr[3][3] = { 0 };
+	int Barr[3][3] = { 0 };
+	int Carr[3][3] = { 0 };	//행렬곱 배열
+
+	printf("[행렬 A]\n");
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			scanf("%d", &Aarr[i][j]);
+		}
+	}
+	printf("[행렬 B]\n");
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			scanf("%d", &Barr[i][j]);
+		}
+	}
+	printf("[행렬 A]\n");
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			printf("%d\t", Aarr[i][j]);
+		}
+		printf("\n");
+	}
+	printf("[행렬 B]\n");
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			printf("%d\t", Barr[i][j]);
+		}
+		printf("\n");
+	}
+
+	printf("[행렬 곱]\n");
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			for (int k = 0; k < 3; k++) {
+				Carr[i][j] += Aarr[i][k] * Barr[k][j];
+			}
+		}
+	}
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			printf("%d\t", Carr[i][j]);
+		}
+		printf("\n");
+	}
+}
